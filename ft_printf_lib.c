@@ -7,7 +7,7 @@ int ft_printstr(char *format)
 	i = 0;
 	if (format == NULL)
 	{
-		ft_putstr_fd("(null)", 6);
+		write(1,"(null)", 6);
 		return (6);
 	}
 
