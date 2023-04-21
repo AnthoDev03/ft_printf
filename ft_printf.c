@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anthrodr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/21 13:07:40 by anthrodr          #+#    #+#             */
+/*   Updated: 2023/04/21 13:27:13 by anthrodr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_printchar(int c)
@@ -28,27 +40,26 @@ int	ft_formats(va_list args, const char format)
 	return (pr_len);
 }
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-   int i;
-   va_list args;
-   int pr_lenght;
+	int		i;
+	va_list	args;
+	int		pr_lenght;
 
-   i = 0;
-   pr_lenght = 0;
-   va_start(args, format);
-   while (format[i])
-   {
-      if (format[i] == '%')
-      {
-         pr_lenght += ft_formats(args, format[i + 1]);
-         i++;
-      }
-      else
-         pr_lenght += ft_printchar(format[i]);
-      i++;
-   }
-   va_end(args);
-   return (pr_lenght);
+	i = 0;
+	pr_lenght = 0;
+	va_start(args, format);
+	while (format[i])
+	{
+		if (format[i] == '%')
+		{
+			pr_lenght += ft_formats(args, format[i + 1]);
+			i++;
+		}
+		else
+			pr_lenght += ft_printchar(format[i]);
+		i++;
+	}
+	va_end(args);
+	return (pr_lenght);
 }
-

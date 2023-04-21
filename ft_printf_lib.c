@@ -1,16 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_lib.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anthrodr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/21 13:29:21 by anthrodr          #+#    #+#             */
+/*   Updated: 2023/04/21 13:31:16 by anthrodr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int ft_printstr(char *format)
+int	ft_printstr(char *format)
 {
-	int  i;
+	int		i;
 
 	i = 0;
 	if (format == NULL)
 	{
-		write(1,"(null)", 6);
+		write(1, "(null)", 6);
 		return (6);
 	}
-
 	while (format[i])
 	{
 		ft_putchar_fd(format[i], 1);
@@ -18,6 +29,7 @@ int ft_printstr(char *format)
 	}
 	return (i);
 }
+
 int	ft_printnbr(int n)
 {
 	int		len;

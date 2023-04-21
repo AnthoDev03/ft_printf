@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_ptr.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anthrodr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/21 13:31:43 by anthrodr          #+#    #+#             */
+/*   Updated: 2023/04/21 13:32:59 by anthrodr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_ptr_len(uintptr_t num)
@@ -34,11 +46,11 @@ int	ft_print_ptr(unsigned long long ptr)
 	int	print_length;
 
 	print_length = 0;
-    if (ptr == (unsigned long long)(void *)0)
-    {
-        print_length += write(1, "(nil)", 5);
-            return (print_length);
-    }       
+	if (ptr == (unsigned long long)(void *)0)
+	{
+		print_length += write(1, "(nil)", 5);
+		return (print_length);
+	}
 	print_length += write(1, "0x", 2);
 	if (ptr == 0)
 		print_length += write(1, "0", 1);
